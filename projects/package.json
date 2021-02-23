@@ -1,0 +1,28 @@
+{
+  "name": "ls",
+  "version": "1.0.0",
+  "discription": "This is a website for the fictional campsites review site Nucamp",
+  "main": "index.html",
+  "scripts": {
+    "lite": "lite-server",
+    "scss": "node-sass -o css/ css/",
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Steve Wilson",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "lite-server": "^2.5.4",
+    "node-sass": "^4.14.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "bootstrap-social": "^5.1.1",
+    "bulma": "^0.9.1",
+    "font-awesome": "^4.7.0",
+    "git": "^0.1.5",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  }
+}

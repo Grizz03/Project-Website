@@ -1,0 +1,240 @@
+/* Global/Desktop View */
+body {
+    background-image: url(./images/Logo\ Background.png);
+    background-color: rgb(211, 211, 211);
+    background-attachment: fixed;
+    /* font-family: 'Lato', sans-serif; */
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+.container {
+    padding: 5rem 0;
+    min-height: 500px !important;
+    /* max-width: 1024px !important; */
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+}
+
+
+nav {
+    padding-bottom: 2rem;
+}
+
+.navbar-brand img {
+    width: 100%;
+}
+
+.navbar-brand {
+    margin-left: 20px;
+    width: 75px !important;
+    transition: transform 2s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.2);
+}
+
+.nav-link {
+    font-weight: bold;
+}
+
+ul {
+    margin: 0 auto;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Card flip animation */
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -o-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+
+.image-flip {
+    /* margin-bottom: 50px; */
+    width: 22rem;
+    height: 200px;
+}
+
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 8px 8px 6px rgb(122, 122, 122);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.frontside {
+    -webkit-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    z-index: 2;
+}
+
+.backside {
+    background: white;
+    -webkit-transform: rotateX(-180deg);
+    -moz-transform: rotateX(-180deg);
+    -o-transform: rotateX(-180deg);
+    -ms-transform: rotateX(-180deg);
+    transform: rotateX(-180deg);
+    opacity: 80%;
+    border-radius: 10px;
+}
+
+.card,
+.card-img-top {
+    border-radius: 10px;
+    height: auto;
+}
+
+
+.coll {
+    border-radius: 10px;
+    width: 30%;
+    margin-bottom: 5rem;
+}
+
+
+.coll img {
+    width: 100%;
+    height: auto;
+}
+
+.coll p {
+    padding: 10px 0;
+}
+
+
+.hide-d {
+    display: none;
+}
+
+/* Tablet View */
+
+@media (max-width: 1100px) {
+    .card {
+        width: 18rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .coll {
+        width: 50%;
+    }
+
+    .container {
+        padding: 5rem 2rem !important;
+    }
+
+    .hide-d {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+    }
+
+    .buttons {
+        text-align: center;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    .hide-d {
+        display: block;
+    }
+}
+
+@media (max-width: 450px) {
+    .coll {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    .buttons {
+        text-align: center;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    .hide-d {
+        display: block;
+    }
+}
+
+@media (max-width: 350px) {
+    .logo {
+        font-size: 85%;
+    }
+
+    .buttons button {
+        font-size: 80%;
+        padding: 5px 7px;
+    }
+
+    .coll {
+        width: 90%;
+    }
+
+    .hide-d {
+        display: block;
+    }
+}

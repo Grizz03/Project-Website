@@ -1,0 +1,88 @@
+body {
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+  color: #fff;
+  background-color: rgb(58, 58, 58);
+}
+
+
+
+#scoreFont{
+font-size: 45px;
+font-weight: bold;
+}
+#livesFont{
+  font-size: 35px;
+}
+
+#startBtn {
+  width: 250px;
+  height: 100px;
+  font-size: 45px;
+}
+
+.statusNum {
+  font-size: 3em;
+}
+
+input{
+  height: 120px;
+  width: 220px;
+  font-size: 80pt;
+  color: rgb(78, 78, 78);
+  background-color: rgb(171, 236, 215);
+}
+header {
+  padding-top: 1rem;
+  text-align: center;
+}
+#num1, #num2{
+  font-size: 2em;
+}
+#game {
+  padding-top: 5rem;
+}
+
+.sec0 {
+  width: 0%;
+}
+
+.sec1 {
+  width: 10%;
+}
+
+.sec2 {
+  width: 20%;
+}
+
+.sec3 {
+  width: 30%;
+}
+
+.sec4 {
+  width: 40%;
+}
+
+.sec5 {
+  width: 50%;
+}
+
+.sec6 {
+  width: 60%;
+}
+
+.sec7 {
+  width: 70%;
+}
+
+.sec8 {
+  width: 80%;
+}
+
+.sec9 {
+  width: 90%;
+}
+
+.sec10 {
+  width: 100%;
+}

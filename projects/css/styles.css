@@ -1,0 +1,82 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    background-image: url(https://wallpaperaccess.com/full/1251284.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1, h2, h3 {
+    font-family: "Lobster", cursive;
+    color: linear-gradient(to right, #7f37dd, #df832e, #dd3c36);
+}
+
+h2 {
+    color: #7f4afa;
+}
+
+header h2 {
+    color: #fc5421;
+}
+
+.site-footer {
+    background-image: linear-gradient(to right, #7f37dd, #df832e, #dd3c36);;
+    padding: 20px 0;
+}
+
+.jumbotron {
+    margin: 0;
+    padding: 3px;
+    background-image: linear-gradient(to right, #7f37dd, #df832e, #dd3c36);;
+    color: white;
+}
+
+.row-content {
+    padding: 50px 0;
+    border-bottom: 1px ridge;
+    min-height: 200px;
+}
+
+.navbar {
+    background-image: linear-gradient(to right, #7f37dd, #df832e, #dd3c36);
+}
+.tab-content {
+    border: 1px solid #DDD;
+    border-top: none;
+    padding: 10px;
+}
+.btn  {
+    background-image: linear-gradient(to left, #7f37dd, #df832e, #dd3c36);
+}
+.btn:hover  {
+    background-image: linear-gradient(to right, #7f37dd, #df832e, #dd3c36);
+}
+.card-header    {
+    background-image: linear-gradient(to right, #7f37dd, #df832e, #dd3c36);
+}
+.fa    {
+    color: black;
+}
+a   {
+    color: #e47535;
+    font-weight: bold;
+}
+a:hover {
+    color: #fa4141;
+}
+.cancel {
+    background-image: gray !important;
+}
+.card-body {
+    background-image: url(https://wallpaperaccess.com/full/1251284.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 2rem;
+}
+

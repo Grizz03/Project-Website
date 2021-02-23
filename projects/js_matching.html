@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <title>Matching Game</title>
+</head>
+
+<body onload="generateFaces()">
+  <audio id="oop" src="oops.mp3" preload="auto"></audio>
+  <h1>Matching Game</h1>
+  <header>
+    <div id="instructions">Find the extra Astronaut on the left:</div>
+    <br>
+    <div id="levels">Level: <span class="statusNum" id="level">1</span></div>
+    <div id='timerdiv'>
+      Within <span class="statusNum" id="countdown">20</span> seconds.
+    </div>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  </header>
+  <button id='restartBtn'>RESTART</button>
+  <hr />
+  <div class="gameboard" id="leftSide"></div>
+  <div class="gameboard" id="rightSide"></div>
+  <style>
+    #levels {
+      margin-right: 50px;
+      margin: 3% 0 3% 0;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    header {
+      display: table-row-group;
+      justify-content: space-between;
+      margin-top: 10px;
+      color: lightskyblue;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    .statusNum {
+      font-size: 2em;
+      color: lightseagreen !important;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    img {
+      width: 60px;
+      height: 75px;
+    }
+
+    h1 {
+      font-family: 'Press Start 2P', cursive;
+      color: lightskyblue !important;
+      text-decoration-color: lightseagreen;
+      padding-left: 6px;
+      padding-right: 6px;
+      text-transform: uppercase;
+      font-size: 28px;
+    }
+
+    #instructions {
+      padding: 3% 0 3% 0;
+      font-size: 18px;
+      color: lightskyblue !important;
+      text-decoration: underline;
+      text-decoration-color: lightseagreen;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    hr {
+      margin-top: 2rem;
+      height: 3px;
+      background-color: lightseagreen;
+      border: none;
+      max-width: 796px;
+      margin: 0px;
+    }
+
+    body {
+      background-image: url(space.jpg);
+      background-attachment: fixed;
+      background-position-x: center;
+      background-repeat: no-repeat;
+      color: lightseagreen;
+      font-weight: bold;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    img {
+      position: absolute;
+    }
+
+    .gameboard {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+    }
+
+    #rightSide {
+      left: 400px;
+      border-left: 1px solid;
+      right: 400px;
+      border-right: 3px solid;
+      border-bottom: 3px solid;
+    }
+
+    #leftSide {
+      border-left: 3px solid;
+      border-bottom: 3px solid;
+    }
+
+    .hurry {
+      color: yellow !important;
+      transition-duration: 2.5s;
+    }
+
+    .timeup {
+      color: red !important;
+      transition-duration: 2.5s;
+    }
+
+    #restartBtn {
+      width: 300px;
+      height: 60px;
+      background-color: rgb(37, 37, 37);
+      color: white;
+      margin-left: 20%;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    #restartBtn:hover {
+      color: lime;
+    }
+
+    .gratz{
+      transition-duration: 500ms;
+      color: lime !important;
+      border: dashed lime 2px;
+      padding: 8px;
+    }
+
+    .myStyle {
+      transition-duration: 6s;
+      transform: rotate(360deg);
+      filter: sepia(100%);
+    }
+  </style>
+  <script>
+    let numberOfFaces = 3;
+    let countdown; //declared globally because it will be referenced in more than function
+    var levels = 1;
+    const TIME_GIVEN = "20";
+    const theLeftSide = document.querySelector("#leftSide");
+    const theRightSide = document.querySelector("#rightSide");
+    document.getElementById('restartBtn').style.visibility = 'hidden';
+
+    let levelColor = document.getElementById('level');
+    let changeColor = document.getElementById('countdown');
+
+    function generateFaces() {
+      for (let numberOfFaces = 0; numberOfFaces < 3; numberOfFaces++) {
+        var face = document.createElement("img");
+        face.src = "astronaut.png";
+        var randomTop = Math.floor(Math.random() * 300 + 1);
+        var randomLeft = Math.floor(Math.random() * 300 + 1);
+        face.style.top = randomTop + "px";
+        face.style.left = randomLeft + "px";
+        theLeftSide.appendChild(face);
+      }
+      let leftSideImages = theLeftSide.cloneNode(true);
+      leftSideImages.removeChild(leftSideImages.lastChild);
+      theRightSide.appendChild(leftSideImages);
+
+      theLeftSide.lastChild.addEventListener("click", nextLevel);
+      document.getElementById('leftSide').addEventListener("click", gameOver);
+
+      let seconds = TIME_GIVEN;
+      countdown = setInterval(function () {
+        seconds--;
+        document.getElementById("countdown").textContent = seconds;
+        if (seconds === 11) {
+          changeColor.classList.add('hurry');
+        }
+        if (seconds <= 6) {
+          changeColor.classList.add('timeup');
+        }
+        if (seconds <= 0) gameOver();
+      }, 1000);
+      //what is wrong here? -->
+      if (seconds === 0) {
+        document.getElementById('oop').play();
+      }
+    }
+
+    function nextLevel() {
+      spaceSound();
+      event.stopPropagation();
+      clearInterval(countdown);
+      numberOfFaces += 3;
+      levels += 1;
+      document.getElementById("countdown").textContent = TIME_GIVEN;
+      document.getElementById("level").textContent = levels;
+      changeColor.classList.remove('hurry');
+      changeColor.classList.remove('timeup');
+      generateFaces();
+    }
+
+    function gameOver() {
+      document.getElementById('leftSide').removeEventListener("click", gameOver);
+      theLeftSide.lastChild.removeEventListener("click", nextLevel);
+      clearInterval(countdown);
+      if (levels >= 0) {
+        document.getElementById('oop').play();
+        highlight();
+        document.getElementById('restartBtn').style.visibility = 'visible';
+        levelColor.classList.add('gratz');
+        document.getElementById('timerdiv').style.visibility = 'hidden'
+      }
+    }
+
+    function highlight() {
+      var lastAstronaut = theLeftSide.lastChild;
+      lastAstronaut.classList.add("myStyle");
+    }
+
+    function spaceSound() {
+      var audio = new Audio('spaceSound.mp3');
+      audio.play();
+    }
+
+    document.getElementById('restartBtn').addEventListener('click', function () {
+      location.reload();
+    })
+  </script>
+</body>
+
+</html>

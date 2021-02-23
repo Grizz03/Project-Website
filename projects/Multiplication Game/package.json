@@ -1,0 +1,16 @@
+{
+  "name": "multiplication-game",
+  "version": "1.0.0",
+  "description": "First solo game",
+  "main": "index.html",
+  "dependencies": {
+    "bootstrap": "^3.4.1",
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Steve Wilson",
+  "license": "ISC"
+}

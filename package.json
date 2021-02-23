@@ -1,0 +1,15 @@
+{
+  "name": "project_website",
+  "version": "1.0.0",
+  "description": "Projects I've created.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Steve Wilson",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "popper": "^1.0.1"
+  }
+}

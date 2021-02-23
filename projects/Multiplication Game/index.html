@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Math Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Math Game</h1>
+        <small>3 lives, Compete and get the highest score within the time limit!</small>
+    </header>
+    <div id='game'class="container">
+        <div id='timer'>
+            <h4>You have <span class="statusNum" id="countdown">60</span> seconds left.</h4>
+          </div>
+          <div id='start'>
+              <button id='startBtn' type="button" class="btn btn-success" onclick="theCountdown()">Start</button> 
+          </div>
+          <br>
+        <div class="row">
+            <h1><span id='num1'></span> X <span id='num2'></span></h1>
+        </div>
+
+            <input type="number" onfocus="this.value=''" id="answer">
+            <br>
+            <button type='button' class="btn btn-primary btn-sm" id="check">Check</button>
+    </div>
+    <br>
+    <div class="container">
+        <h2 id='scoreFont'>Score: <span id='score'>0</span></h2>
+        <h2 id='livesFont'>♥️: <span id='lives'>3</span></h2>
+    </div>
+
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
+    </script>
+    <script src="index.js"></script>
+</body>
+
+</html>
